@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style2.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
     <title>Alura Movies</title>
 </head>
 
 <body>
     <div class="header">
         <div class="logo">
-            <a href="index.html">
-                <img src="/static/assets/img/Alura.png" alt="">
+            <a href="{{ url_for('index') }}">
+              <img src="{{ url_for('static', filename='img/Alura.png') }}" alt="Logo da Alura Movies">
             </a>
         </div>
     </div>
@@ -21,7 +21,7 @@
     <div class="login_body">
         <div class="login_box">
             <h2>Criar Cadastro</h2>
-            <form action="login.html">
+            <form action="{{ url_for('login') }}">
                 <div class="input_box">
                     <input required type="email" placeholder="Email ou número de telefone">
                 </div>
@@ -51,11 +51,11 @@
             </div>
             
                 <div class="sign_up">
-                    <p>Fazer Login? <a href="login.html">Clique Aqui.</a></p>
+                    <p>Fazer Login? <a href="{{ url_for('login') }}">Clique Aqui.</a></p>
                 </div>
 
                 <div class="terms">
-                    <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="index.html">Saiba mais</a></p>
+                    <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="{{ url_for('index') }}">Saiba mais</a></p>
                 </div>
             </div>
         </div>

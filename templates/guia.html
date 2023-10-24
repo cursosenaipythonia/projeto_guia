@@ -14,11 +14,12 @@
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- FIM BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="/static/style3.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style3.css') }}">
 
   <script src="menu.js" defer></script>
 
   <title>Alura Movies</title>
+  
 </head>
 
 <body>
@@ -26,22 +27,22 @@
   <header>
     <div class="interface">
       <div class="logo">
-        <a href="index.html">
-          <img src="/static/assets/img/Alura.png" alt="Logo da Alura Movies">
+        <a href="{{ url_for('index') }}">
+          <img src="{{ url_for('static', filename='assets/img/Alura.png') }}" alt="Logo da Alura Movies">
         </a>
       </div>
       <!--logo-->
 
       <nav class="menu-desktop">
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="guia.html">Guia</a></li>
+          <li><a href="{{ url_for('index') }}">Início</a></li>
+          <li><a href="{{ url_for('guia') }}">Guia</a></li>
           <li><a href="#">Sobre</a></li>
         </ul>
       </nav>
 
       <div class="btn-contato">
-        <a href="login.html">
+        <a href="{{ url_for('login') }}">
           <button>Sair</button>
         </a>
       </div>
@@ -69,37 +70,38 @@
       <div class="overlay-menu" id="overlay-menu"></div>
     </div>
     <!--interface-->
+    
   </header>
+  
     <div class="btn-perfil">
-  <a href="login.html">
-    <button>Perfil Personalizado</button>
-  </a>
-</div>
+  <button id="open-profile-button">Perfil Personalizado</button>
+    </div>
+    
   <main>
     <section class="especiliadades">
   <div class="interface">
     <h2 class="titulo">Filmes em <span>Destaque.</span></h2>
     <div class="flex">
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes1.jpg" alt="Filme 1">
-        <h3>Filmes 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.
+        <img src="{{ url_for('static', filename='assets/img/filmes1.jpg') }}" alt="Filme 1">
+        <h3>Mercenarios</h3>
+        <p>Mercenários é um filme de ação explosivo que reúne um elenco de estrelas, incluindo Sylvester Stallone, Jason Statham e Arnold Schwarzenegger. A trama segue um grupo de mercenários contratados para derrubar um ditador impiedoso
         </p>
       </div>
       <!--especialidades-box-->
 
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes2.jpg" alt="Filme 2">
-        <h3>Filmes 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.
+        <img src="{{ url_for('static', filename='assets/img/filmes2.jpg') }}" alt="Filme 2">
+        <h3>Refúgio</h3>
+        <p>Refúgio é um filme emocionante que narra a jornada de um casal em uma ilha remota, buscando salvar seu casamento após uma tragédia. Com paisagens deslumbrantes e atuações envolventes de Jennifer Connelly e Anthony Mackie, o filme explora temas profundos de amor e recomeço.
         </p>
       </div>
       <!--especialidades-box-->
 
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes3.jpg" alt="Filme 3">
-        <h3>Filmes 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.
+        <img src="{{ url_for('static', filename='assets/img/filmes3.jpg') }}" alt="Filme 3">
+        <h3>Infiltrado</h3>
+        <p>Infiltrado é um eletrizante filme de ação e suspense que segue um policial disfarçado que se infiltra em uma perigosa gangue de narcotráfico. Com performances brilhantes de Mark Wahlberg e um enredo repleto de reviravoltas, o filme mantém a tensão do início ao fim.
         </p>
       </div>
       <!--especialidades-box-->
@@ -132,7 +134,7 @@
       <div class="line-footer">
         <div class="flex">
           <div class="logo-footer">
-            <img src="/static/assets/img/Alura.png" alt="Logotipo Alura Movies">
+            <img src="assets/img/Alura.png" alt="Logotipo Alura Movies">
           </div>
           <!--logo-footer-->
           <div class=" btn-social">
@@ -153,6 +155,28 @@
     <!--interface-->
   </footer>
 
-</body>
+<!-- Dentro da seção <head> da página "Guia.html" -->
+<script>
+  // Função para abrir o pop-up
+  function openProfilePopup() {
+    // Crie um elemento div para o pop-up
+    const popup = document.createElement("div");
+    popup.className = "popup";
+    
+    // Carregue o conteúdo da página "perfil.html" no pop-up
+    fetch("{{ url_for('perfil') }}")
+      .then(response => response.text())
+      .then(data => {
+        popup.innerHTML = data;
+      });
 
+    // Adicione o pop-up à página
+    document.body.appendChild(popup);
+  }
+
+  // Adicione um ouvinte de evento para abrir o pop-up quando o botão for clicado
+  document.getElementById("open-profile-button").addEventListener("click", openProfilePopup);
+</script>
+
+</body>
 </html>

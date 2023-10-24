@@ -23,5 +23,10 @@ def guia():
   return render_template('guia.html')
 
 
+@app.route('/perfil')
+def perfil():
+  return render_template('perfil.html')
+
+
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)

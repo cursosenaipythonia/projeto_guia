@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- FIM GOOGLE FONTES -->
+  <!-- BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- FIM BOOTSTRAP ICONS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='popup.css') }}">
+
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <div class="popup">
+  <div class="popup-content">
+     <!-- Ícone para fechar o pop-up -->
+    <a href="{{ url_for('guia') }}" class="closePopup">
+      <i class="bi bi-x-lg"></i>
+    </a>
+    <h1>Criar Perfil Personalizado</h1>
+    <form>
+      <!-- Gêneros de Interesse (Múltipla Seleção) -->
+      <h2>Gêneros de Interesse</h2>
+      <select name="genero" id="genero" multiple>
+        <option value="acao">Ação</option>
+        <option value="aventura">Aventura</option>
+        <option value="comedia">Comédia</option>
+        <option value="drama">Drama</option>
+        <option value="ficcao">Ficção Científica</option>
+        <option value="terror">Terror</option>
+        <option value="romance">Romance</option>
+        <option value="animacao">Animação</option>
+        <option value="documentario">Documentário</option>
+      </select>
+    
+      <!-- Faixa Etária -->
+      <h2>Faixa Etária</h2>
+      <select name="faixaEtaria" id="faixaEtaria" multiple>
+        <option value="menos18">Menos de 18 anos</option>
+        <option value="18a24">18-24 anos</option>
+        <option value="25a34">25-34 anos</option>
+        <option value="35a44">35-44 anos</option>
+        <option value="45a54">45-54 anos</option>
+        <option value="55a64">55-64 anos</option>
+        <option value="65mais">65 anos ou mais</option>
+      </select>
+      
+      <!-- Tipo de Conteúdo -->
+      <h2>Tipo de Conteúdo</h2>
+      <select name="tipoConteudo" id="tipoConteudo" multiple>
+        <option value="filmes">Filmes</option>
+        <option value="series">Séries de TV</option>
+        <option value="ambos">Ambos</option>
+      </select>
+      
+      <!-- Frequência de Uso -->
+      <h2>Frequência de Uso</h2>
+      <select name="frequenciaUso" id="frequenciaUso">
+        <option value="diariamente">Diariamente</option>
+        <option value="semanalmente">Semanalmente</option>
+        <option value="mensalmente">Mensalmente</option>
+        <option value="raramente">Raramente</option>
+      </select>
+      
+      <input type="submit" value="Salvar Perfil">
+    </form>
+  </div>
+  </div><!-- Certifique-se de que o elemento script esteja no final do seu arquivo HTML, antes do fechamento da tag </body> -->
+<script>
+  // Função para fechar o pop-up
+  function closePopup() {
+    const popup = document.querySelector(".popup");
+    popup.style.display = "none"; // Oculta o pop-up
+  }
+
+  // Adicione um evento de clique para o ícone de fechamento
+  const closePopupButton = document.getElementById("closePopup");
+  if (closePopupButton) {
+    closePopupButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Impede que o link aja como um link padrão
+      closePopup(); // Chame a função para fechar o pop-up
+    });
+  }
+</script>
+
+</body>
+</html>
