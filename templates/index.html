@@ -14,7 +14,7 @@
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- FIM BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="/static/style3.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
 
   <script src="menu.js" defer></script>
 
@@ -27,22 +27,22 @@
     <div class="interface">
       <div class="logo">
         <a href="index.html">
-          <img src="/static/assets/img/Alura.png" alt="Logo da Alura Movies">
+          <img src="{{ url_for('static', filename='img/Alura.png') }}" alt="Logo da Alura Movies">
         </a>
       </div>
       <!--logo-->
 
       <nav class="menu-desktop">
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="login.html">Guia</a></li>
+          <li><a href="{{ url_for('index') }}">Início</a></li>
+          <li><a href="{{ url_for('guia') }}">Guia</a></li>
           <li><a href="#">Sobre</a></li>
-          <li><a href="cadastro.html">Cadastre-se</a></li>
+          <li><a href="{{ url_for('cadastro') }}">Cadastre-se</a></li>
         </ul>
       </nav>
 
       <div class="btn-contato">
-        <a href="login.html">
+          <li><a href="{{ url_for('login') }}">
           <button>Login</button>
         </a>
       </div>
@@ -59,11 +59,11 @@
 
         <nav>
           <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="#">Guia</a></li>
+            <li><a href="{{ url_for('index') }}">Início</a></li>
+            <li><a href="{{ url_for('guia') }}">Guia</a></li>
             <li><a href="#">Sobre</a></li>
-            <li><a href="cadastro.html">Cadastre-se</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="{{ url_for('cadastro') }}">Cadastre-se</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
           </ul>
         </nav>
 
@@ -84,7 +84,7 @@
               apaixonada por cinema, comprometida em trazer as melhores experiências cinematográficas para o seu
               alcance.</p>
             <div class="btn-contato">
-              <a href="cadastro.html">
+              <a href="{{ url_for('cadastro') }}">
                 <button>Cadastre-se </button>
               </a>
             </div>
@@ -92,7 +92,7 @@
           <!--txt-topo-site-->
 
           <div class="img-topo-site">
-            <img src="/static/assets/img/freira.png" alt="">
+            <img src="{{ url_for('static', filename='img/freira.png') }}" alt="">
           </div>
           <!--img-topo-site-->
         </div>
@@ -107,7 +107,7 @@
         <h2 class="titulo">Guia de <span>Recomendação.</span></h2>
         <div class="flex">
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes1.jpg" alt="Filme 1">
+        <img src="{{ url_for('static', filename='img/filmes1.jpg') }}" alt="Filme 1">
         <h3>Mercenarios</h3>
         <p>Os Mercenarios é conhecido pela ação intensa e pela reunião de ícones do cinema de ação. A trama envolve lutas espetaculares e explosões, e destaca o espírito de camaradagem entre os personagens. 
         </p>
@@ -115,7 +115,7 @@
       <!--especialidades-box-->
 
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes2.jpg" alt="Filme 2">
+        <img src="{{ url_for('static', filename='img/filmes2.jpg') }}" alt="Filme 2">
         <h3>Refúgio</h3>
         <p>Refúgio é um drama romântico de 2013 dirigido por Drake Doremus. A trama segue a história de um amor proibido entre um rapaz britânico e uma garota americana, cujas vidas são impactadas por desafios imigratórios. 
         </p>
@@ -123,7 +123,7 @@
       <!--especialidades-box-->
 
       <div class="especialidades-box">
-        <img src="/static/assets/img/filmes3.jpg" alt="Filme 3">
+        <img src="{{ url_for('static', filename='img/filmes3.jpg') }}" alt="Filme 3">
         <h3>Infiltrado</h3>
         <p>Infiltrado é um filme de ação de 2006 dirigido por Martin Scorsese. Estrelado por Leonardo DiCaprio, Matt Damon e Jack Nicholson, a trama gira em torno de um policial disfarçado infiltrado na máfia, enquanto outro é um espião da máfia dentro da polícia. Ambos tentam expor o traidor no meio deles. 
         </p>
@@ -140,7 +140,7 @@
       <div class="interface">
         <div class="flex">
           <div class="img-sobre">
-            <img src="images/foto.png" alt="">
+            <img src="{{ url_for('static', filename='img/foto.png') }}" alt="">
           </div>
           <!--img-sobre-->
 
@@ -173,7 +173,7 @@
       <div class="line-footer">
         <div class="flex">
           <div class="logo-footer">
-            <img src="/static/assets/img/Alura.png" alt="Logotipo Alura Movies">
+            <img src="{{ url_for('static', filename='img/Alura.png') }}" alt="Logotipo Alura Movies">
           </div>
           <!--logo-footer-->
           <div class=" btn-social">
