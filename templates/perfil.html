@@ -26,54 +26,49 @@
       <i class="bi bi-x-lg"></i>
     </a>
     <h1>Criar Perfil Personalizado</h1>
-    <form>
+    <form method="post" action="{{ url_for('guia') }}">
       <!-- Gêneros de Interesse (Múltipla Seleção) -->
-      <h2>Gêneros de Interesse</h2>
-      <select name="genero" id="genero" multiple>
-        <option value="acao">Ação</option>
-        <option value="aventura">Aventura</option>
-        <option value="comedia">Comédia</option>
-        <option value="drama">Drama</option>
-        <option value="ficcao">Ficção Científica</option>
-        <option value="terror">Terror</option>
-        <option value="romance">Romance</option>
-        <option value="animacao">Animação</option>
-        <option value="documentario">Documentário</option>
-      </select>
-    
-      <!-- Faixa Etária -->
-      <h2>Faixa Etária</h2>
-      <select name="faixaEtaria" id="faixaEtaria" multiple>
-        <option value="menos18">Menos de 18 anos</option>
-        <option value="18a24">18-24 anos</option>
-        <option value="25a34">25-34 anos</option>
-        <option value="35a44">35-44 anos</option>
-        <option value="45a54">45-54 anos</option>
-        <option value="55a64">55-64 anos</option>
-        <option value="65mais">65 anos ou mais</option>
-      </select>
-      
-      <!-- Tipo de Conteúdo -->
-      <h2>Tipo de Conteúdo</h2>
-      <select name="tipoConteudo" id="tipoConteudo" multiple>
-        <option value="filmes">Filmes</option>
-        <option value="series">Séries de TV</option>
-        <option value="ambos">Ambos</option>
-      </select>
-      
-      <!-- Frequência de Uso -->
-      <h2>Frequência de Uso</h2>
-      <select name="frequenciaUso" id="frequenciaUso">
-        <option value="diariamente">Diariamente</option>
-        <option value="semanalmente">Semanalmente</option>
-        <option value="mensalmente">Mensalmente</option>
-        <option value="raramente">Raramente</option>
-      </select>
-      
-      <input type="submit" value="Salvar Perfil">
+      <h2>Gêneros de Interesse:</h2>
+        <label>
+            <select name="genero[]" multiple>
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="acao">Ação</option>
+                <option value="aventura">Aventura</option>
+                <option value="comedia">Comédia</option>
+                <option value="drama">Drama</option>
+                <option value="ficcao">Ficção Científica</option>
+                <option value="terror">Terror</option>
+                <option value="romance">Romance</option>
+                <option value="animacao">Animação</option>
+                <option value="documentario">Documentário</option>
+                <option value="outro">Outro</option>
+            </select>
+        </label><br>
+
+        <h2>Classificação Indicativa:</h2>
+        <label>
+            <select name="classificacao">
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="adulto">Adulto</option>
+                <option value="criancas">Crianças</option>
+            </select>
+        </label><br>
+
+        <h2>Avaliações:</h2>
+        <label>
+            <select name="avaliacao">
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="acima_de_5">Acima de 5</option>
+                <option value="abaixo_de_5">Abaixo de 5</option>
+                <option value="todas">Todas</option>
+            </select>
+        </label><br>
+
+        <input type="submit" value="Salvar Perfil">
     </form>
   </div>
-  </div><!-- Certifique-se de que o elemento script esteja no final do seu arquivo HTML, antes do fechamento da tag </body> -->
+  </div>
+  <!-- Certifique-se de que o elemento script esteja no final do seu arquivo HTML, antes do fechamento da tag </body> -->
 <script>
   // Função para fechar o pop-up
   function closePopup() {

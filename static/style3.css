@@ -507,12 +507,12 @@ footer .line-footer p a {
 /* Adicione estilos para o botão "Perfil Personalizado" */
 .btn-perfil {
   text-align: left;
-  margin: 20px 20px 20px 40px; /* Adicione margem à direita para espaçamento */
+  margin: 20px 20px 20px 300px; /* Adicione margem à direita para espaçamento */
 }
 
 .btn-perfil button {
   background-color: #fbff00;
-  color: #3333;
+  color: #000000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
