@@ -1,0 +1,538 @@
+/* ESTILO GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #000000;
+  background-image: url({{ url_for('static', filename='img/back.jpg') }})
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 140px;
+  width: 230px;
+}
+
+.logo-footer img {
+  height: 140px;
+  width: 230px;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #fbff00;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+h2.titulo {
+  color: #fcf4f4;
+  font-size: 44px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #f70800;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px #ffffff;
+  transform: scale(1.05);
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+  padding: 40px 4%;
+}
+
+header>.interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #5c5c5c;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+/* ESTILO DO MENU MOBILE */
+
+.btn-abrir-menu i {
+  color: #ee1000;
+  font-size: 40px;
+  cursor: pointer;
+  display: none;
+
+}
+
+.menu-mobile {
+  background-color: #000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 0%;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.menu-mobile .abrir-menu {
+  width: 70%;
+}
+
+.menu-mobile.abrir-menu~.overlay-menu {
+  display: block;
+}
+
+
+.menu-mobile .btn-fechar {
+  padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i {
+  color: #ffbb00;
+  font-size: 30px;
+}
+
+.menu-mobile nav ul {
+  text-align: right;
+}
+
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+  background-color: #ff0000;
+  color: #000;
+}
+
+.overlay-menu {
+  background-color: #000000df;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8888;
+  display: none;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+  padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.topo-do-site h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+  color: #faf200;
+}
+
+.topo-do-site .txt-topo-site p {
+  color: #fff;
+  margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes flutuar {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 30px;
+  }
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especiliadades {
+  padding: 40px 4%;
+}
+
+section.especiliadades .flex {
+  gap: 20px;
+}
+
+/* Personalize a classe .especialidades-box */
+.especialidades-box {
+  border: 1px solid #ddd;
+  /* Borda das caixas */
+  border-radius: 5px;
+  /* Borda arredondada */
+  padding: 20px;
+  /* Espaçamento interno */
+  text-align: center;
+  /* Alinhamento do conteúdo ao centro */
+  margin: 10px;
+  /* Espaçamento entre as caixas */
+  width: 100%;
+  /* Largura das caixas (ajuste conforme necessário) */
+}
+
+
+.especiliadades .especialidades-box {
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: .2s;
+}
+
+.especialidades-box img {
+  max-width: 100%;
+  /* Garanta que a imagem não ultrapasse o contêiner */
+}
+
+.especiliadades .especialidades-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffffff78;
+}
+
+.especiliadades .especialidades-box i {
+  font-size: 70px;
+  color: #ff0000;
+}
+
+.especiliadades .especialidades-box h3 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer {
+  padding: 40px 4%;
+  box-shadow: 0 0 40px 10px #ffffff1d;
+  margin-top: 40px;
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+footer .line-footer {
+  padding: 20px 0;
+}
+
+.borda {
+  border-top: 2px solid #da0808;
+}
+
+footer .line-footer p i {
+  color: #ff0000;
+  font-size: 22px;
+}
+
+footer .line-footer p a {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* CLASSES GERAIS */
+  .especiliadades .flex {
+    flex-direction: column;
+  }
+
+  /* .flex {
+    flex-direction: column;
+  }*/
+
+  .topo-do-site .flex {
+    flex-direction: column-reverse;
+  }
+
+  h2.titulo {
+    font-size: 35px;
+    line-height: 35x;
+  }
+
+  /* CABEÇALHO */
+  .menu-desktop,
+  .btn-contato {
+    display: none;
+  }
+
+  /* TOPO DO SITE */
+
+  section.topo-do-site .flex {
+    gap: 40px;
+  }
+
+  section.topo-do-site {
+    padding: 20px 8%;
+  }
+
+  .topo-do-site h1 {
+    font-size: 30px;
+  }
+
+  .topo-do-site .img-topo-site img {
+    width: 100%;
+  }
+
+  /* ESPECIALIDADES */
+  section.especiliadades {
+    padding: 40px 8%;
+  }
+
+  /* SOBRE */
+  section.sobre {
+    padding: 80px 8%;
+  }
+
+  .sobre .txt-sobre h2 {
+    font-size: 34px;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .btn-social {
+    text-align: center;
+  }
+
+  .img-sobre img {
+    width: 100%;
+  }
+
+
+  /* PORTFÓLIO */
+  section.portfolio {
+    padding: 80px 8%;
+  }
+
+  .img-port {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  section.portfolio .flex {
+    gap: 60px;
+  }
+
+  /* RODAPÉ */
+  footer .flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  footer .line-footer {
+    text-align: center;
+  }
+}
+
+/* Adicione estilos para o botão "Perfil Personalizado" */
+.btn-perfil {
+  text-align: left;
+  margin: 20px 20px 20px 40px;
+  /* Adicione margem à direita para espaçamento */
+}
+
+.btn-perfil button {
+  background-color: #fbff00;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-perfil button:hover {
+  background-color: #f1f1f1;
+}
+
+
+.login_body {
+  padding: 60px;
+  z-index: 90;
+  position: relative;
+  max-width: 450px;
+  height: 550px;
+  margin-left: 50%;
+  background-color: rgb(0, 0, 0, 0.75);
+  border-radius: 10px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+}
+
+.login_body h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-top: 0;
+  margin: 20px auto 20px auto;
+  text-align: center;
+}
+
+.login_body input {
+  height: 50px;
+  width: 100%;
+  color: #ffffffa6;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.login_body input:hover {
+  background-color: #444;
+}
+
+.input_box {
+  margin-bottom: 25px;
+}
+
+.login_body button {
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  background-color: #e50914;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.login_body button:hover {
+  background-color: #fc1722;
+  cursor: pointer;
+}
+
+.support {
+  display: flex;
+  color: #b3b3b3;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.support input {
+  width: 15px;
+  height: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.remember span {
+  margin-right: 5px;
+  height: 25px;
+}
+
+.help a {
+  text-decoration: none;
+  color: #737373;
+}
+
+.help a:hover {
+  text-decoration: underline;
+}
+
+.login_facebook {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #737373;
+}
+
+.login_facebook span {
+  margin-right: 5px;
+  font-size: 13px;
+}
+
+.login_facebook span a {
+  text-decoration: none;
+  color: #737373;
+}
+
+.sign_up {
+  color: #737373;
+  font-size: 16px;
+}
+
+.sign_up a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.sign_up a:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  color: #737373;
+  font-size: 13px;
+}
+
+.terms a {
+  text-decoration: none;
+  color: #0071eb;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}

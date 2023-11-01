@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- FIM GOOGLE FONTES -->
+  <!-- BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- FIM BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
+
+  <script src="menu.js" defer></script>
+
+  <title>Cinemix Movies</title>
+  <style>
+    @keyframes entrada {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            animation: entrada 5s ease forwards;
+            transition: transform 0.6s, color 0.3s;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            color: #fbff00fa;
+             }
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="interface">
+      <div class="logo">
+        <a href="index.html">
+          <img src="{{ url_for('static', filename='img/Cinemix.png') }}" alt="Logo Cinemix Movies">
+        </a>
+      </div>
+      <!--logo-->
+
+      <nav class="menu-desktop">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Início</a></li>
+          <li><a href="{{ url_for('guia') }}">Guia</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="{{ url_for('cadastro') }}">Cadastre-se</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-contato">
+          <li><a href="{{ url_for('login') }}">
+          <button>Login</button>
+        </a>
+      </div>
+      <!--btn-contato-->
+
+      <div class="btn-abrir-menu" id="btn-menu">
+        <i class="bi bi-list"></i>
+      </div>
+
+      <div class="menu-mobile" id="menu-mobile">
+        <div class="btn-fechar">
+          <i class="bi bi-x-lg"></i>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Início</a></li>
+            <li><a href="{{ url_for('guia') }}">Guia</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="{{ url_for('cadastro') }}">Cadastre-se</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+          </ul>
+        </nav>
+
+      </div>
+      <!--menu-mobile-->
+      <div class="overlay-menu" id="overlay-menu"></div>
+    </div>
+    <!--interface-->
+  </header>
+
+    <main>
+    <section class="topo-do-site">
+      <div class="interface">
+        <div class="flex">
+          <div class="txt-topo-site">
+            <h1>Bem vindo a Cine Movies <span>.</span></h1>
+            <p>Na Cine Movies, mergulhamos no universo da sétima arte com paixão e dedicação. Somos uma equipe
+              apaixonada por cinema, comprometida em trazer as melhores experiências cinematográficas para o seu
+              alcance.</p>
+            <div class="btn-contato">
+              <a href="{{ url_for('cadastro') }}">
+                <button>Cadastre-se </button>
+              </a>
+            </div>
+          </div>
+          <!--txt-topo-site-->
+
+          <div class="img-topo-site">
+            <img src="{{ url_for('static', filename='img/freira.png') }}" alt="Filme 3"
+          </div>
+          <!--img-topo-site-->
+        </div>
+        <!--flex-->
+      </div>
+      <!--interface-->
+    </section>
+    <!--topo-do-site-->
+
+    <section class="especiliadades">
+      <div class="interface">
+        <h2 class="titulo">Guia de <span>Recomendação.</span></h2>
+        <div class="flex">
+          <div class="especialidades-box">
+             <img src="{{ url_for('static', filename='img/Alerta.jpg') }}" alt="Filme 3">  
+            <h3>Jogos Mortais</h3>
+            <p>Os Mercenarios é conhecido pela ação intensa e pela reunião de ícones do cinema de ação. A trama envolve
+              lutas espetaculares e explosões, e destaca o espírito de camaradagem entre os personagens.
+            </p>
+          </div>
+          <!--especialidades-box-->
+
+          <div class="especialidades-box">
+            <img src="{{ url_for('static', filename='img/boneco.jpg') }}" alt="Filme 3">
+            <h3>Boneco do Mal</h3>
+            <p>Boneco do Mal é um suspense arrepiante que segue uma jovem babá que aceita um trabalho em uma mansão isolada. Para sua surpresa, ela descobre que o filho que deve cuidar é, na verdade, um boneco. Conforme eventos estranhos acontecem, ela começa a desvendar segredos sombrios sobre a casa e o boneco.
+            </p>
+          </div>
+          <!--especialidades-box-->
+
+          <div class="especialidades-box">
+             <img src="{{ url_for('static', filename='img/ovisitante.jpg') }}" alt="Filme 3">
+            <h3>O Visitante</h3>
+            <p>O Visitante é um thriller envolvente que segue um professor de direito que se vê envolvido em um complexo mistério criminal após encontrar um homem inocente acusado de assassinato. O filme explora temas de justiça e identidade, mantendo o espectador em suspense do início ao fim.            
+            </p>
+          </div>
+          <!--especialidades-box-->
+        </div>
+        <!--flex-->
+      </div>
+      <!--interface-->
+    </section>
+
+
+    <section class="especiliadades">
+      <div class="interface">
+        <h2 class="titulo">Mais <span>Assistidos.</span></h2>
+        <div class="flex">
+          <div class="especialidades-box">
+            <img src="{{ url_for('static', filename='img/motoqueiro.jpg') }}" alt="Filme 3"> 
+            <h3>Motoqueiro Fantasma </h3>
+            <p>Motoqueiro Fantasma é um filme de super-herói que segue Johnny Blaze, um piloto de motocross que se transforma no vingador sobrenatural, o Motoqueiro Fantasma, ao cair em um pacto com o diabo. Equipado com uma motocicleta flamejante e poderes infernais, ele luta contra forças do mal.
+            </p>
+          </div>
+          <!--especialidades-box-->
+
+          <div class="especialidades-box">
+             <img src="{{ url_for('static', filename='img/Alerta.jpg') }}" alt="Filme 3">
+
+            <h3>Alerta Vermelho</h3>
+            <p>Alerta Vermelho é um filme de ação eletrizante estrelado por Dwayne Johnson e Gal Gadot. A trama segue um agente da Interpol e uma ladra de arte em uma corrida contra o tempo para deter um gênio do crime que ameaça o mundo.
+          </p>
+          </div>
+          <!--especialidades-box-->
+
+          <div class="especialidades-box">
+            <img src="{{ url_for('static', filename='img/chamado.jpg') }}" alt="Filme 3">
+            <h3>Chamado do Mal</h3>
+            <p>Infiltrado é um filme de ação de 2006 dirigido por Martin Scorsese. Estrelado por Leonardo DiCaprio, Matt
+              Damon e Jack Nicholson, a trama gira em torno de um policial disfarçado infiltrado na máfia, enquanto
+              outro é um espião da máfia dentro da polícia. Ambos tentam expor o traidor no meio deles.
+            </p>
+          </div>
+          <!--especialidades-box-->
+        </div>
+        <!--flex-->
+      </div>
+      <!--interface-->
+    </section>
+    <!--especiliadades-->
+
+    <section class="sobre">
+      <div class="interface">
+        <div class="flex">
+          <div class="img-sobre">
+            <img src="{{ url_for('static', filename='img/foto.png') }}" alt="">
+          </div>
+          <!--img-sobre-->
+
+          <div class="txt-sobre">
+            <h2>Como funciona a<span>Alura Movies?</span></h2>
+            <p> Na Alura Movies, temos o compromisso de proporcionar a melhor experiência de entretenimento aos nossos usuários. Nosso sistema de recomendação é uma ferramenta confiável e totalmente gratuita. Não exigimos nenhum pagamento para acessá-lo.
+
+              Ao fazer o login em nossa plataforma, você terá acesso a um sistema inteligente e intuitivo que analisa suas preferências de filmes e sugere conteúdos personalizados, baseados em seu histórico de visualizações. Nossa tecnologia avançada leva em consideração uma variedade de critérios, desde gênero até diretores e elenco, para oferecer recomendações precisas e relevantes.
+</p>
+            <p>É importante ressaltar que em nenhum momento solicitamos informações financeiras. Estamos comprometidos com a segurança e a privacidade de nossos usuários. O único objetivo do nosso sistema de recomendação é aprimorar sua experiência de assistir filmes, proporcionando sugestões alinhadas aos seus gostos individuais.
+
+              Na Alura Movies, acreditamos que o entretenimento deve ser acessível e personalizado. Nosso sistema de recomendação gratuito e confiável é uma extensão desse compromisso, visando enriquecer sua jornada cinematográfica de maneira autêntica e envolvente. Faça login agora e descubra um universo de filmes feitos especialmente para você.
+              
+            </p>
+        
+            
+            <!--btn-social-->
+          </div>
+          <!--txt-sobre-->
+        </div>
+        <!--flex-->
+      </div>
+      <!--interface-->
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="interface">
+      <div class="line-footer">
+        <div class="flex">
+          <div class="logo-footer">
+            <img src="{{ url_for('static', filename='img/Cinemix.png') }}" alt="Logo Cinemix Movies">
+          </div>
+          <!--logo-footer-->
+          <div class=" btn-social">
+            <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+            <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+            <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+          </div>
+          <!--btn-social-->
+        </div>
+      </div>
+      <!--line-footer-->
+
+      <div class="line-footer borda">
+        <p><i class="bi bi-envelope-fill"></i> <a href="aluramovies@gmail.com">contato@murilodev.com.br</a></p>
+      </div>
+      <!--line-footer-->
+    </div>
+    <!--interface-->
+  </footer>
+
+</body>
+
+</html>
