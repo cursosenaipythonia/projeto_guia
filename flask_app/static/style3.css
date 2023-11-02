@@ -511,14 +511,15 @@ footer .line-footer p a {
 }
 
 .btn-perfil button {
-  background-color: #fbff00;
-  color: #000000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin:  auto;
+    background-color: #fbff00;
+    color: #000000;
+    padding: 10px 40px;
+    margin: auto auto auto 270px; /* Adicionei 20px de margem superior e inferior e 'auto' para centralizar horizontalmente */
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .btn-perfil button:hover {
