@@ -1,15 +1,24 @@
-from .database import db
+from . import db
+from flask_login import UserMixin
 
 # Resto do código
 
 
-class UserPreferences(db.Model):
+class Note(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  data = db.Column(db.String(10000))
+  date = db.Column(db.DateTime(timezone=True), default=func.now())
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+
+class User(db.Model, UserMixin):
   __tablename__ = "usuario"
   id = db.Column(db.Integer, primary_key=True)
   user_id = db.Column(db.String(80), nullable=False)
   genres = db.Column(db.String(200))
   adult = db.Column(db.Boolean)
   ratings = db.Column(db.String(100))
+  notes = db.relationship('Note')
 
 
 """
@@ -20,8 +29,7 @@ class PreferencesForm(FlaskForm):
   submit = SubmitField('Salvar Perfil')
   
   """
-
-
+"""
 def __init__(self, id, user_id, genres, adult, ratings):
   self.id = id
   self.user_id = user_id
@@ -31,3 +39,4 @@ def __init__(self, id, user_id, genres, adult, ratings):
 
 def __repr__(self):
   return "<UserPreferences {}>".format(self.user_id)
+"""
