@@ -28,16 +28,16 @@ def inicio():
 def inicio():
 # Verifica se o usuário está autenticado de acordo com a lógica do Flask-Login
     return render_template('index.html')
-
 """
 
+"""
 # Carregue a lista de filmes uma vez ao iniciar o aplicativo
 with open('models/filmes_dataframe.pkl', 'rb') as file:
     filmesData = pickle.load(file)
 
 with open('models/filmes_df.pkl', 'rb') as file:
     filmesFilter = pickle.load(file)
-"""
+
 # Carregar o modelo em um novo código
 with open('models/modelo.pkl', 'rb') as file:
     similarity = pickle.load(file)
