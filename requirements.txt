@@ -2,4 +2,5 @@ flask
 flask-login
 Flask-SQLAlchemy
 pandas
+gunicorn
 requests
