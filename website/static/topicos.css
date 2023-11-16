@@ -1,0 +1,84 @@
+.topicos {
+    background: var(--cor-rodape);
+    color: white;
+    text-align: center;
+    padding: 2.5em 2em;
+    border-radius : 8px;
+    font-family: Arial;
+}
+
+.topicos__titulo .h3 {
+    color: var(--branco);
+    font-weight: 300;
+    margin-bottom: 1.5em;
+    font-family: Arial;
+    
+}
+
+.topicos__container {
+  text-align: center;
+}
+
+.topicos__foto {
+  width: 100px; /* Defina o tamanho da imagem */
+  height: 100px; /* Defina o tamanho da imagem */
+  border-radius: 50%; /* Formato circular */
+  object-fit: cover; /* Ajusta a imagem para preencher o espaço disponível */
+}
+
+.topicos__nome {
+  margin-top: 5px; /* Espaçamento entre a foto e o nome */
+  font-family: Arial; /* Escolha a fonte desejada */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+.topicos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2px;
+}
+
+.topicos__item {
+    margin: 0.2em 0.5em;
+    padding: 1em;
+}
+
+.topicos__link {
+    color: var(--branco);
+    /*padding: 1em;
+    border-radius: 5em;
+    font-size: 14px;
+    font-weight: 700;*/
+}
+
+        /* Estilo inicial do elemento */
+
+        .elemento {
+            border-radius:8px;
+            width: auto;
+            color: #fbff00;
+            
+            transition: background-color 0.3s ease; /* Transição suave de cor */
+        }
+         /* Estilo inicial do elemento */
+
+ 
+        /* Efeito de mouse hover */
+        .elemento:hover {
+            color: #ffff;
+        }
+        /* Efeito de mouse hover */
+
+/*
+@media screen and (min-width: 1024px) {
+    .__ {
+        
+    }
+}
+/*
+@media screen and (min-width: 1366px) {
+    .__ {
+        
+    }
+}

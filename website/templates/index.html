@@ -1,0 +1,550 @@
+{% extends "base.html" %} {% block title %}Página Inicial{% endblock %} {% block content
+%}
+
+<!--Adicionar background na página -->
+
+<!-- Adicione os links para os arquivos CSS do Swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='carrossel.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='topicos.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='banner.css') }}">
+
+
+<style>
+
+  body {
+    align-items: center ;
+    text-align: center;
+    background-image: url("{{ url_for('static', filename='image/back.jpg') }}");
+    background-size: cover; /* ajusta o tamanho da imagem para preencher o elemento */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* impede a repetição da imagem */
+}
+</style>
+
+
+<!-- Script para Esrilizar Nome De Equipe-->
+
+    
+
+<!--Efeito imagens Rodapé Imagensde equipe -->
+
+<style>
+
+        /* Estilo para a imagem */
+
+        .topicos__item {
+
+            width: 100px; /* Largura inicial da imagem */
+
+            height: auto; /* Altura automática para manter a proporção */
+
+            transition: transform 0.3s ease; /* Transição suave */
+
+        }
+
+
+
+        /* Efeito de mouse hover para aumentar a imagem */
+
+        .topicos__item:hover {
+
+            transform: scale(1.6); /* Aumenta a escala em 10% */
+
+        }
+
+
+
+        /* Estilo para o nome */
+
+        .topicos__nome {
+
+            transition: transform 0.3s ease; /* Transição suave */
+
+        }
+
+
+
+        /* Efeito de mouse hover para mover o nome para cima */
+
+        .topicos__nome:hover {
+
+            transform: translateY(-10px); /* Move para cima 10px */
+
+        }
+
+    </style>
+
+
+
+</head>
+
+
+
+
+
+<!--Efeito Imagens Slide e Texto Transição de Texto H2--6>
+
+<style>
+
+    @keyframes entrada {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(-20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+
+        h2 {
+
+            animation: entrada 5s ease forwards;
+
+            transition: transform 0.6s, color 0.3s;
+
+        }
+
+
+
+        h2 :hover {
+
+            transform: scale(1.1);
+
+            color: #fbff00fa;
+
+             }
+
+
+
+        img {
+
+            animation: entrada 2s ease forwards;
+
+            transition: transform 0.6s, color 0.9s;
+
+        }
+
+  </style>
+-->
+<body>
+
+  
+
+<header>
+
+
+
+</header>
+
+<section class="banner">
+
+    <h1 class="banner__titulo">Já sabe por onde começar?</h1>
+
+    <p class="banner__texto"> Saiba mais sobre o nosso projeto, acessando nosso repositorio no Github!</p>
+
+    <button class="custom-button">Clique em mim!</button>
+
+
+
+<!-- Classes Banner Background Card-->
+
+</section>
+
+<header>
+
+<section class="carrosel">
+
+        <h2 class="carrosel__titulo"> CINEMIX MOVIES</h2>
+
+        <p> O Cinemix Movies é guia de recomendação de filmes baseado em seus interesses...</p>
+
+        <!-- Slider main container -->
+
+<div class="carrosel__container">
+
+  <div class="swiper">
+
+    <!-- Additional required wrapper -->
+
+    <!-- If we need pagination -->
+
+      <div class="swiper-pagination"></div>
+
+    <div class="swiper-wrapper">
+
+     <!-- Slides -->
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes1.jpg') }}" alt="Filmes1"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes2.jpg') }}" alt="Filmes2"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes3.jpg') }}" alt="Filmes3"></div>
+
+       <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes4.jpg') }}" alt="Filmes4"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes5.jpg') }}" alt="Filmes5"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes6.jpg') }}" alt="Filmes6"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes7.jpg') }}" alt="Filmes7"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes8.jpg') }}" alt="Filmes8"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes9.jpg') }}" alt="Filmes9"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes10.jpg') }}" alt="Filmes10"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes11.jpg') }}" alt="Filmes11"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes12.jpg') }}" alt="Filmes12"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes13.jpg') }}" alt="Filmes13"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes14.jpg') }}" alt="Filmes14"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes15.jpg') }}" alt="Filmes15"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes16.jpg') }}" alt="Filmes16"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes17.jpg') }}" alt="Filmes17"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes18.jpg') }}" alt="Filmes18"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes20.jpg') }}" alt="Filmes19"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes20.jpg') }}" alt="Filmes20"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes21.jpg') }}" alt="Filmes21"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes22.jpg') }}" alt="Filmes22"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes23.jpg') }}" alt="Filmes23"></div>
+
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='image/filmes24.jpg') }}" alt="Filmes24"></div>
+
+    </div>   
+
+  
+
+    <!-- If we need navigation buttons -->
+
+    <div class="swiper-button-prev"></div>
+
+    <div class="swiper-button-next"></div>
+
+  </div>
+
+</div>
+
+</section>
+
+</header>
+
+<!-- Seção de introdução do sistema -->
+
+<section class="card">
+
+    <!-- Primeira parte Introdução -->
+
+    <div class="card">
+
+        <div class="card__descricao">
+
+            <div class="descricao">
+
+                <h2 class="descricao__titulo">Cinemix Movies - Sistema de Recomendação de Filmes
+
+                </h2>
+
+                <p>O Cinemix Movies é o seu guia definitivo para descobrir os melhores filmes baseados em suas preferências únicas. Nosso sistema de recomendação de filmes utiliza técnicas avançadas para oferecer recomendações personalizadas.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Segunda parte introdução -->
+
+    <div class="card">
+
+        <div class="card__descricao">
+
+            <div class="descricao">
+
+                <h3 class="descricao__titulo">Como funciona?</h3>
+
+                <p>O nosso sistema de recomendação é simples e poderoso. Primeiro, você preenche um formulário com informações sobre seus interesses em filmes, incluindo gêneros preferidos, ano desejado, taxa de avaliação, entre outros critérios relevantes. Ao clicar em "Gerar Recomendações", nosso sistema analisa os dados fornecidos, realiza uma filtragem única no nosso extenso banco de dados e, utilizando algoritmos de aprendizado avançados, identifica padrões e similaridades para oferecer recomendações personalizadas e precisas.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Terceira parte introdução-->     
+
+    <div class="card">
+
+        <div class="card__descricao">
+
+            <div class="descricao">
+
+                <h3 class="descricao__titulo">Por que escolher o Cinemix Movies?</h3>
+
+                <p>Nossa plataforma é projetada para entregar o que o usuário deseja. Com uma ampla variedade de filmes e um sistema de recomendação inteligente, garantimos que você descubra filmes incríveis que correspondam aos seus gostos. Esteja você procurando por clássicos, lançamentos recentes ou filmes menos conhecidos, o Cinemix Movies tem tudo para atender aos seus desejos de entretenimento.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--Seção do Rodapé Projeto Desenvolvido-->
+
+
+
+<section class="topicos">
+
+    <h2 class="elemento">PROJETO DESENVOLVIDO POR <br> EQUIPE CINEASTAS</h2>
+
+    <ul class="topicos__lista">
+
+        <li class="topicos__item"><a href="#" class="topicos__link">
+
+            <div class="topicos__container">
+
+                <img src="{{ url_for('static', filename='image/1.png') }}" alt="Lideon" class="topicos__foto">
+
+                <p class="topicos__nome">Lideon</p>
+
+            </div>
+
+        </li>
+
+          <li class="topicos__item"><a href="#" class="topicos__link">
+
+            <div class="topicos__container">
+
+                <img src="{{ url_for('static', filename='image/1.png') }}" alt="Pietra" class="topicos__foto">
+
+                <p class="topicos__nome">Pietra</p>
+
+            </div>
+
+        </li>
+
+        <li class="topicos__item"><a href="#" class="topicos__link">
+
+            <div class="topicos__container">
+
+                <img src="{{ url_for('static', filename='image/1.png') }}" alt="Vitor" class="topicos__foto">
+
+                <p class="topicos__nome">Vitor</p>
+
+            </div>
+
+        </li>
+
+        <li class="topicos__item"><a href="#" class="topicos__link">
+
+            <div class="topicos__container">
+
+                <img src="{{ url_for('static', filename='image/1.png') }}" alt="Murilo" class="topicos__foto">
+
+                <p class="topicos__nome">Murilo</p>
+
+            </div>
+
+
+
+        <li class="topicos__item"><a href="index.html" class="topicos__link">
+
+            <div class="topicos__container">
+
+                <img src="{{ url_for('static', filename='image/1.png') }}" alt="Everton" class="topicos__foto">
+
+                <p class="topicos__nome">Everton</p>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+  <!-- Adicione os links para os arquivos JavaScript do Swiper -->
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const swiper = new Swiper('.swiper', {
+
+        slidesPerView: 1, // Defina o número de slides visíveis
+
+        spaceBetween: 2.5, // Espaçamento entre os slides
+
+        loop: true, // Para criar um loop de slides
+
+        autoplay: {
+
+          delay: 1000, // Tempo de rolagem automática em milissegundos
+
+          disableOnInteraction: false, // Continuar rolando mesmo se o usuário interagir com o slider
+
+          reverseDirection: true // Direção da rolagem (no seu caso, para a esquerda)
+
+          /*el: '.swiper-pagination',
+
+          type: 'bullets',*/
+
+        },
+
+        navigation: {
+
+          nextEl: '.swiper-button-next',
+
+          prevEl: '.swiper-button-prev',
+
+        },
+
+        breakpoints: {
+
+      // Configurações para telas menores, como dispositivos móveis
+
+      428: {
+
+        slidesPerView: 3, // Exibe apenas um slide
+
+      }
+
+    }
+
+      });
+
+    });
+
+  </script>
+
+ 
+
+ <!-- Elemento onde o texto será exibido -->
+
+<!--<script>
+
+        const frases = [
+
+            "Somos a Equipe CINEASTA",
+
+            "Estamos participando do",
+
+            "SIC INNOVATION CAMPUS",
+
+            "Muito Obrigado!!!"
+
+        ];
+
+
+
+        const delayDigitacao = 100; // Delay para cada caractere
+
+        const delayApagar = 50; // Delay para apagar o texto
+
+        let fraseAtual = 0;
+
+
+
+        const elementoTexto = document.querySelector('.texto');
+
+        let index = 0;
+
+        let textoAtual = '';
+
+
+
+        function escreverTexto() {
+
+            textoAtual += frases[fraseAtual][index];
+
+            elementoTexto.textContent = textoAtual;
+
+            index++;
+
+
+
+            if (index < frases[fraseAtual].length) {
+
+                setTimeout(escreverTexto, delayDigitacao);
+
+            } else {
+
+                setTimeout(apagarTexto, delayApagar);
+
+            }
+
+        }
+
+
+
+        function apagarTexto() {
+
+            textoAtual = textoAtual.slice(0, -1);
+
+            elementoTexto.textContent = textoAtual;
+
+
+
+            if (textoAtual.length > 0) {
+
+                setTimeout(apagarTexto, delayApagar);
+
+            } else {
+
+                index = 0;
+
+                fraseAtual = (fraseAtual + 1) % frases.length; // Avança para a próxima frase
+
+                setTimeout(escreverTexto, delayDigitacao);
+
+            }
+
+        }
+
+
+
+        // Inicia o efeito
+
+        escreverTexto();
+
+    </script>-->
+{% endblock %}

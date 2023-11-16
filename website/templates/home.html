@@ -1,0 +1,148 @@
+{% extends "base.html" %} {% block title %}Guia de Recomendação{% endblock %} {% block content
+%}
+
+<!--Sistemda de recomendação -->
+  
+<!-- Formulário de Seleção-->
+
+<div class="form-container">
+  <h2> Formulário de Recomendação </h2>
+  <form method="POST" action="{{ url_for('views.index') }}">
+    <div class="column">
+    <label for="genres">Gêneros</label>
+    <select id="genres" name="genres" multiple>
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Drama">Drama</option>
+      <option value="Science_Fiction">Science Fiction</option>
+      <option value="Horror">Horror</option>
+      <option value="Romance">Romance</option>
+      <option value="Animation">Animation</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Thriller">Thriller</option>
+
+      <!-- Adicione mais opções de gênero aqui -->
+    </select>
+  </div>
+  
+  <!--Comentário-->
+  
+  <div class="column">
+    <label for="year">Ano do Filme</label>
+    <select id="year" name="year" multiple>
+      <option value="2001">2001</option>
+      <option value="2002">2002</option>
+      <option value="2003">2003</option>
+      <option value="2004">2004</option>
+      <option value="2005">2005</option>
+      <option value="2006">2006</option>
+      <option value="2007">2007</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+    </select>
+  </div>
+  
+  
+  <div class="column">
+    <label for="ratings">Avaliação</label>
+    <select id="ratings" name="ratings" multiple>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <!-- Adicione mais opções de classificação aqui -->
+    </select>
+  </div>
+      <button type="submit">Gerar Recomendações</button>
+  </form>
+</div>
+
+
+<!--Script para exibir os valores selecionados -->
+<div class="results">
+    <h3>Dados selecionados:</h3>
+    <p>Gêneros:{% for genero in generos %}
+            {{ genero }}
+            {% if not loop.last %}, {% endif %}
+        {% endfor %}</p>
+    <p>Ano do Filme: {{ ano_lancamento }}</p>
+    <p>Avaliação: {{ nota_minima }}</p>
+</div>
+
+<!-- Filmes Recomendados -->
+{% if recommended_movie_names %}
+  <h2 style="text-align: center;">Filmes Recomendados</h2>
+  <ul class="gallery">
+    {% for i in range(10) %}
+      <li class="movie-item">
+        <img class="movie-poster" src="{{ recommended_movie_posters[i] }}" alt="Movie Poster">
+        <div class="movie-title">{{ recommended_movie_names[i] }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <h2 style="text-align: center;">Nenhum Filme Recomendado</h2>
+  <p style="color:#ffff;">Não encontramos recomendações com base no seu interesse. Por favor, faça outra seleção.</p>
+
+{% endif %}
+
+
+
+<!-- Container separado para a seção "Adicionar Notas" -->
+
+<!-- Container separado para a seção "Adicionar Notas" -->
+{% if user.is_authenticated %}
+  <div class="add-notes-container">
+    <!-- Seção: Adicionar Notas -->
+    <section class="add-notes-section">
+      <h2 align="center">Adicionar Notas</h2>
+
+      <!-- Note Manager -->
+      <div class="note-manager">
+        <ul class="list-group list-group-flush" id="notes">
+          {% for note in user.notes %}
+            <li class="list-group-item">
+              {{ note.data }}
+              <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <!-- Formulário para adicionar notas -->
+        <form method="POST" action="{{ url_for('views.home') }}">
+          <textarea name="note" id="note" class="form-control"></textarea>
+          <br />
+          <div align="center">
+            <button type="submit" class="btn btn-primary">Salvar Notas</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+{% endif %}
+
+{% endblock %}

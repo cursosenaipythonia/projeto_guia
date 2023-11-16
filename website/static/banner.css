@@ -1,0 +1,44 @@
+.banner {
+    background: var(--azul-degrade);
+    color: white;
+    text-align: center;
+    padding: 2.5em 2em;
+    border-radius : 8px;
+}
+
+.card {
+  background: var(--azul-degrade);
+    color: white;
+    text-align: center;
+    padding: 2.5em 2em;
+    border-radius : 8px;
+    font-family: Arial;
+}
+
+.banner__titulo {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
+.banner__texto {
+    font-weight: 500;
+    margin: 1em 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    /*.__ {
+        
+    }
+}*/
+
+@media screen and (min-width: 1366px) {
+    . {
+       
+    }
+}

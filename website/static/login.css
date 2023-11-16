@@ -1,0 +1,777 @@
+/* ESTILO GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00000;
+}
+
+@media (max-width: 767px) {
+  /* Estilos para dispositivos móveis aqui */
+  .navbar-nav {
+    /* Adicione estilos específicos para o menu de navegação */
+    padding: .7rem;
+    justify-content: space-around; /* ou ajuste conforme necessário */
+    flex-direction: column;
+    
+  }
+
+  .navbar-toggler {
+    padding: .7rem;
+    /* Estilos para o botão do menu responsivo *
+    order: -1; /* Coloca o botão no início do conteúdo */
+  }
+  .nav-item {
+    margin-left: auto;
+    justify-content: space-around;
+    font-size: 1em;
+    
+    
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Estilos para dispositivos móveis aqui */
+  .navbar-nav {
+    /* Adicione estilos específicos para o menu de navegação */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+    
+    
+  }
+
+  .navbar-toggler {
+    display:flex;
+    /* Estilos para o botão do menu responsivo *
+    order: -1; /* Coloca o botão no início do conteúdo */
+  }
+  .nav-item {
+    letter-spacing: 3px;
+    margin-left: 32px;
+    list-style: none;
+    display: flex;
+    
+  }
+}
+
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 140px;
+  max-width: auto;
+}
+
+.logo-footer img {
+  height: 140px;
+  max-width: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #fbff00;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+h2.titulo {
+  color: #fcf4f4;
+  font-size: 44px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #f70800;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px #ffffff;
+  transform: scale(1.05);
+}
+
+/* ESTILO DO CABEÇALHO */
+
+/* Adicione este bloco de estilo ao seu arquivo CSS */
+/* Adicione isso ao seu arquivo CSS */
+
+.container {
+  grid-area: header;
+  
+}
+
+header {
+  padding: 40px 4%;
+}
+
+header>.interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+
+/* ESTILO DO MENU MOBILE */
+
+.btn-abrir-menu i {
+  color: #ee1000;
+  font-size: 40px;
+  cursor: pointer;
+  display: none;
+
+}
+
+.menu-mobile {
+  background-color: #000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 0%;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.menu-mobile .abrir-menu {
+  width: 70%;
+}
+
+.menu-mobile.abrir-menu~.overlay-menu {
+  display: block;
+}
+
+
+.menu-mobile .btn-fechar {
+  padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i {
+  color: #ffbb00;
+  font-size: 30px;
+}
+
+.menu-mobile nav ul {
+  text-align: right;
+}
+
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+  background-color: #ff0000;
+  color: #000;
+}
+
+.overlay-menu {
+  background-color: #000000df;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8888;
+  display: none;
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+  padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.topo-do-site h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+  color: #faf200;
+}
+
+.topo-do-site .txt-topo-site p {
+  color: #fff;
+  margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes flutuar {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 30px;
+  }
+}
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especiliadades {
+  padding: 40px 4%;
+}
+
+section.especiliadades .flex {
+  gap: 20px;
+}
+
+/* Personalize a classe .especialidades-box */
+.especialidades-box {
+  border: 1px solid #ddd;
+  /* Borda das caixas */
+  border-radius: 5px;
+  /* Borda arredondada */
+  padding: 20px;
+  /* Espaçamento interno */
+  text-align: center;
+  /* Alinhamento do conteúdo ao centro */
+  margin: 10px;
+  /* Espaçamento entre as caixas */
+  width: 100%;
+  /* Largura das caixas (ajuste conforme necessário) */
+}
+
+
+.especiliadades .especialidades-box {
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: .2s;
+}
+
+.especialidades-box img {
+  max-width: 100%;
+  /* Garanta que a imagem não ultrapasse o contêiner */
+}
+
+.especiliadades .especialidades-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffffff78;
+}
+
+.especiliadades .especialidades-box i {
+  font-size: 70px;
+  color: #ff0000;
+}
+
+.especiliadades .especialidades-box h3 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer {
+  padding: .97rem;
+  /*box-shadow: 0 0 40px 10px;*/
+  margin: .97rem;
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+footer .line-footer {
+  padding: 20px 0;
+  color: #000;
+
+}
+
+  
+.borda {
+  border-top: 5px solid #fff;
+}
+
+footer .line-footer{
+  text-align: center;
+  font-size: 22px;
+  color: #fff ;
+}
+
+.interface {
+  padding:.97rem;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /* CLASSES GERAIS */
+  .especiliadades .flex {
+    flex-direction: column;
+  }
+
+  /* .flex {
+    flex-direction: column;
+  }*/
+
+  .topo-do-site .flex {
+    flex-direction: column-reverse;
+  }
+
+  h2.titulo {
+    font-size: 35px;
+    line-height: 35x;
+  }
+
+  /* CABEÇALHO */
+  .menu-desktop,
+  .btn-contato {
+    display: none;
+  }
+
+  /* TOPO DO SITE */
+
+
+  
+  section.topo-do-site .flex {
+    gap: 40px;
+  }
+
+  section.topo-do-site {
+    padding: 20px 8%;
+  }
+
+  .topo-do-site h1 {
+    font-size: 30px;
+  }
+
+  .topo-do-site .img-topo-site img {
+    width: 100%;
+  }
+
+  /* ESPECIALIDADES */
+  section.especiliadades {
+    padding: 40px 8%;
+  }
+
+  /* SOBRE */
+  section.sobre {
+    padding: 80px 8%;
+  }
+
+  .sobre .txt-sobre h2 {
+    font-size: 34px;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .btn-social {
+    text-align: center;
+    margin-top: 20px;
+    max-width: auto;
+    color: #FBFF00;
+    
+  }
+
+  .img-sobre img {
+    width: 100%;
+  }
+
+
+  /* PORTFÓLIO */
+  section.portfolio {
+    padding: 80px 8%;
+  }
+
+  .img-port {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  section.portfolio .flex {
+    gap: 60px;
+  }
+
+  /* RODAPÉ */
+  footer .flex {
+    flex-direction: column;
+    gap: 30px;
+    color: #0000;
+    
+  }
+
+  footer .line-footer {
+    text-align: center;
+    color: #0000;
+    
+  }
+}
+
+/*Caixa de Login*/
+.login_body {
+  margin-top: 100px;
+  padding: .99rem;
+  background-color: rgb(0, 0, 0, 0.75);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/*Texto titulo - Página Login*/
+.login_body h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-top: 0;
+  margin: 20px auto 20px auto;
+  text-align: center;
+}
+
+/*Caixa de seleção*/
+.login_body input {
+  height: 50px;
+  width: 100%;
+  color: #000f;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+/*Selecionando texto */
+.login_body input:hover {
+  background-color: #0000;
+  color: #fff;
+  
+}
+
+.input_box {
+  margin-bottom: 25px;
+}
+
+.login_body button {
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  background-color: #e50914;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.login_body button:hover {
+  background-color: #fc1722;
+  cursor: pointer;
+}
+
+.support {
+  display: flex;
+  color: #b3b3b3;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.support input {
+  width: 15px;
+  height: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.remember span {
+  margin-right: 5px;
+  height: 25px;
+}
+
+.help a {
+  text-decoration: none;
+  color: #737373;
+}
+
+.help a:hover {
+  text-decoration: underline;
+}
+
+.sign_up {
+  color: #737373;
+  font-size: 16px;
+}
+
+.sign_up a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.sign_up a:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  color: #737373;
+  font-size: 13px;
+}
+
+.terms a {
+  text-decoration: none;
+  color: #0071eb;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Codigo menu responsivo */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-color: #24252a;
+    box-shadow: 0px 3px 10px #464646;
+}
+/*
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: auto;
+}*/
+.nav-bar {
+    display: flex;
+    justify-content: space-evenly ;
+    margin: 0;
+    
+  
+    align-items: center; /* Adiciona alinhamento vertical ao centro */
+}
+
+
+.navbar-nav {
+  margin: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fff;
+}
+
+/*.nav-list {
+    display: flex;
+    align-items: center;
+  
+}*/
+
+/* Para o nav-list */
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0; /* Remove a margem padrão da lista */
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+
+/* Para o nav-item */
+.nav-item {
+  margin-right: 5px;
+}
+
+/*
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}*/
+
+/* Para o nav-link (se necessário) */
+.nav-link {
+    text-decoration: none;
+    /*padding: 0.5rem 1rem; /* Ou ajuste conforme necessário */
+    margin: 20px;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+    display: block; /* Garante que cada link ocupe toda a largura disponível */
+}
+
+.menu {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o espaçamento padrão da lista */
+  display: flex; /* Aplica o display flex para alinhar horizontalmente */
+}
+
+.login-button button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #0187a7;
+}
+
+.login-button button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu .nav-list {
+    padding-right: 10px; /* Ou ajuste conforme necessário */
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.mobile-menu .nav-item {
+    margin-bottom: 0.5rem; /* Ou ajuste conforme necessário */
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem 1.5rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .mobile-menu .nav-list {
+    padding-right: 10px; /* Ou ajuste conforme necessário */
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+    .open {
+        display: block;
+    }
+}
+
+
+.login-button {
+  margin-top: 15px; /* Ajuste o espaçamento do topo conforme necessário */
+}
+
+.login-link {
+  text-decoration: none; /* Remova o sublinhado do link */
+  padding: 5px 10px; /* Adapte o padding conforme necessário */
+  border: 1px solid #000; /* Adicione uma borda para destacar o botão */
+  border-radius: 5px; /* Arredonde as bordas */
+  background-color: #fff; /* Cor de fundo do botão */
+  color: #000; /* Cor do texto do botão */
+}
+
+.logout-button {
+  margin-top: 15px; /* Ajuste o espaçamento do topo conforme necessário */
+}
+
+.logout-link {
+  text-decoration: none; /* Remova o sublinhado do link */
+  padding: 5px 10px; /* Adapte o padding conforme necessário */
+  border: 1px solid #000; /* Adicione uma borda para destacar o botão */
+  border-radius: 5px; /* Arredonde as bordas */
+  background-color: #fff; /* Cor de fundo do botão */
+  color: #000; /* Cor do texto do botão */
+}
