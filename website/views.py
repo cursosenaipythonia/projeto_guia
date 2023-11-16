@@ -37,11 +37,11 @@ with open('models/filmes_dataframe.pkl', 'rb') as file:
 
 with open('models/filmes_df.pkl', 'rb') as file:
     filmesFilter = pickle.load(file)
-
+"""
 # Carregar o modelo em um novo código
 with open('models/modelo.pkl', 'rb') as file:
     similarity = pickle.load(file)
-
+"""
 # Não saberei explicar em detalhes, mas, em resumo, usa uma API que busca a logo dos filmes
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US"
